@@ -88,6 +88,7 @@ public class Links extends Node {
         }
     }
 
+
     public int getSize(){
         return this.size;
     }

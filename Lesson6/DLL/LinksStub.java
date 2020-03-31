@@ -1,22 +1,25 @@
 public class LinksStub {
 	public static void main(String args[]) {
-		Links link = new Links();
+		Links link1 = new Links();
 		for (int i = 0; i < 5; i++)
-			link.addLast(i);
+			link1.addLast(i);
 
-		link.displayNodesForward();
-		link.displayNodesReverse();
+		link1.displayNodesForward();
+		link1.displayNodesReverse();
 
 		System.out.println("-----------------------------");
 
-		for (int i = 0; i < 5; i++)
-			link.addFront(i);
+		Links link2 = new Links();
 
-		link.displayNodesForward();
-		link.displayNodesReverse();
+		for (int i = 0; i < 5; i++)
+			link2.addFront(i);
+
+		link2.displayNodesForward();
+		link2.displayNodesReverse();
 
 	
-		System.out.println("The total number of nodes: " + link.getSize());
+		System.out.println("The total number of  for link 1: " + link1.getSize());
+		System.out.println("The total number of  for link 2: " + link2.getSize());
 	} 
 
 } 

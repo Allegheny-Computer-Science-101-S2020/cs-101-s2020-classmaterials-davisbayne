@@ -88,7 +88,47 @@ public class Links extends Node {
         }
     }
 
+    public boolean deleteNode(int value){
+       /* add logic here */
+       if (head.getData() == value && tail.getData() == value){
+           head = null;
+           tail = null;
+           size --;
+           return true;
+       }
+       else{
+            if (head.getData() == value){
+                head = head.getNext();
+                head.getPrev().setNext(null);
+                head.setPrev(null);
+                size --;
+                return true;
+            }
+            else if (tail.getData() == value){ 
+                tail = tail.getPrev();
+                tail.getNext().setPrev(null);
+                tail.setNext(null);
+                size --;
+                return true;
+            }
+            else{
+                Node current = head;
+                while (current != null){
+                    if (current.getData() == value){
+                        current.getPrev().setNext(current.getNext());
+                        current.getNext().setPrev(current.getPrev());
+                        size --;
+                        return true;
+                    }
+                    current = current.getNext();
 
+                }
+       return false;
+
+    }
+}
+
+}
     public int getSize(){
         return this.size;
     }
